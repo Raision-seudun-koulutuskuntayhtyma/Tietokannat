@@ -1,37 +1,40 @@
+-- SQLiteÃ¤ varten muokattu versio
+-- VARCHAR -> TEXT
+-- FLOAT -> REAL
 
 CREATE TABLE tuoteryhma (
-                tuoteryhma VARCHAR(20) NOT NULL,
+                tuoteryhma TEXT NOT NULL,
                 CONSTRAINT tuoteryhma_pk PRIMARY KEY (tuoteryhma)
 );
 
 
 CREATE TABLE tuote (
                 yksilointikoodi INTEGER NOT NULL,
-                tuoteryhma VARCHAR(20) NOT NULL,
-                nimike VARCHAR(40) NOT NULL,
-                merkki VARCHAR(20) NOT NULL,
-                Malli VARCHAR(20) NOT NULL,
-                paivavuokra FLOAT NOT NULL,
+                tuoteryhma TEXT NOT NULL,
+                nimike TEXT NOT NULL,
+                merkki TEXT NOT NULL,
+                Malli TEXT NOT NULL,
+                paivavuokra REAL NOT NULL,
                 CONSTRAINT tuote_pk PRIMARY KEY (yksilointikoodi)
 );
 
 
 CREATE TABLE yhteystyyppi (
-                yhteystyyppi VARCHAR(20) NOT NULL,
+                yhteystyyppi TEXT NOT NULL,
                 CONSTRAINT yhteystyyppi_pk PRIMARY KEY (yhteystyyppi)
 );
-COMMENT ON COLUMN yhteystyyppi.yhteystyyppi IS 'Taulu on luotu vain käyttöliittymää varten. Se estää käyttäjää syöttämästä Yhteyshenkilö-tauluun muita kuin ennalta määrättyjä arvoja.';
+ -- COMMENT ON COLUMN yhteystyyppi.yhteystyyppi IS 'Taulu on luotu vain kï¿½yttï¿½liittymï¿½ï¿½ varten. Se estï¿½ï¿½ kï¿½yttï¿½jï¿½ï¿½ syï¿½ttï¿½mï¿½stï¿½ Yhteyshenkilï¿½-tauluun muita kuin ennalta mï¿½ï¿½rï¿½ttyjï¿½ arvoja.';
 
 
 CREATE TABLE asiakas (
                 asiakasnumero INTEGER NOT NULL,
-                yritys VARCHAR(30) NOT NULL,
-                laskutusosoite VARCHAR(30) NOT NULL,
-                postinumero VARCHAR(10) NOT NULL,
-                postitoimipaikka VARCHAR(30) NOT NULL,
+                yritys TEXT NOT NULL,
+                laskutusosoite TEXT NOT NULL,
+                postinumero TEXT NOT NULL,
+                postitoimipaikka TEXT NOT NULL,
                 CONSTRAINT asiakas_pk PRIMARY KEY (asiakasnumero)
 );
-COMMENT ON COLUMN asiakas.laskutusosoite IS 'Yrityksen laskujan katu- tai PL-osoite';
+-- COMMENT ON COLUMN asiakas.laskutusosoite IS 'Yrityksen laskujan katu- tai PL-osoite';
 
 
 CREATE TABLE vuokraus (
@@ -42,21 +45,21 @@ CREATE TABLE vuokraus (
                 paattymispaiva DATE NOT NULL,
                 CONSTRAINT vuokraus_pk PRIMARY KEY (tapahtumaid)
 );
-COMMENT ON COLUMN vuokraus.tapahtumaid IS 'Dummy id tulevia käyttötarkoituksia varten';
+-- COMMENT ON COLUMN vuokraus.tapahtumaid IS 'Dummy id tulevia kï¿½yttï¿½tarkoituksia varten';
 
 
 CREATE TABLE yhteyshenkilo (
                 yhteyshenkilo_id INTEGER NOT NULL,
-                yhteystyyppi VARCHAR(20) NOT NULL,
-                etunimi VARCHAR(20) NOT NULL,
-                sukunimi VARCHAR(30) NOT NULL,
-                puhelin VARCHAR(15),
-                sahkoposti VARCHAR(40) NOT NULL,
+                yhteystyyppi TEXT NOT NULL,
+                etunimi TEXT NOT NULL,
+                sukunimi TEXT NOT NULL,
+                puhelin TEXT 
+                sahkoposti TEXT NOT NULL,
                 asiakasnumero INTEGER NOT NULL,
                 CONSTRAINT yhteyshenkilo_pk PRIMARY KEY (yhteyshenkilo_id)
 );
-COMMENT ON COLUMN yhteyshenkilo.yhteyshenkilo_id IS 'Dummy perusavain. Tulevaisuuden tarpeita varten';
-COMMENT ON COLUMN yhteyshenkilo.yhteystyyppi IS 'Taulu on luotu vain käyttöliittymää varten. Se estää käyttäjää syöttämästä Yhteyshenkilö-tauluun muita kuin ennalta määrättyjä arvoja.';
+-- COMMENT ON COLUMN yhteyshenkilo.yhteyshenkilo_id IS 'Dummy perusavain. Tulevaisuuden tarpeita varten';
+-- COMMENT ON COLUMN yhteyshenkilo.yhteystyyppi IS 'Taulu on luotu vain kï¿½yttï¿½liittymï¿½ï¿½ varten. Se estï¿½ï¿½ kï¿½yttï¿½jï¿½ï¿½ syï¿½ttï¿½mï¿½stï¿½ Yhteyshenkilï¿½-tauluun muita kuin ennalta mï¿½ï¿½rï¿½ttyjï¿½ arvoja.';
 
 
 ALTER TABLE tuote ADD CONSTRAINT tuoteryhma_tuote_fk
