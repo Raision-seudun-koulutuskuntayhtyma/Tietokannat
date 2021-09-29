@@ -1,3 +1,2 @@
 INSERT INTO vuokraus (yksilointikoodi,asiakasnumero,alkamispaiva,paattymispaiva) VALUES
-	 (1,1,'2021-09-15','2021-09-22'),
-	 (2,2,'2021-09-16','2021-09-17');
+(3,1,'29.9.2021','5.10.2021')
