@@ -1,5 +1,5 @@
 -- LISÄTÄÄN TESTIASIAKKAAT ASIAKAS-TAULUUN
-
+-- TODO: lisää uusien asiakkaiden tietoja
 USE Vuokraus
 GO
 
