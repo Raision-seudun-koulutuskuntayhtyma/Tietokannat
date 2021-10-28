@@ -4,9 +4,18 @@
  <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
  <project-data-sources>
   <data-source id="DS0">
-   <property key="Logical" value="PlayPen Database" />
+   <property key="Logical" value="PG testikanta" />
+   <property key="Connection Type" value="PostgreSQL" />
+   <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/testikanta" />
+   <property key="UID" value="postgres" />
+   <property key="PWD" value="Q2werty" />
+   <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.login" value="" />
+   <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
   </data-source>
-  <data-source id="DS2">
+  <data-source id="DS0">
    <property key="Connection Type" value="PostgreSQL" />
    <property key="Logical" value="PG testikanta" />
    <property key="JDBC URL" value="jdbc:postgresql://localhost:5432/testikanta" />
@@ -20,13 +29,27 @@
   </data-source>
  </project-data-sources>
  <source-databases>
-  <database id="DB0" populated="true" UUID="bd8083ba-3428-4c32-bba3-da99dd0173ae" dbcs-ref="DS2" name="PG testikanta" physicalName="PG testikanta" >
+  <database id="DB0" populated="true" UUID="bd8083ba-3428-4c32-bba3-da99dd0173ae" dbcs-ref="DS0" name="PG testikanta" physicalName="PG testikanta" >
    <catalog id="CAT1" populated="true" UUID="7f5656f8-2a8b-487c-9386-425be6687f59" name="testikanta" nativeTerm="database" physicalName="testikanta" >
     <schema id="SCH2" populated="false" UUID="90ca22bf-a092-445c-976b-81e70414861e" name="information_schema" nativeTerm="schema" physicalName="information_schema" >
     </schema>
     <schema id="SCH3" populated="false" UUID="ebc7108f-c26a-4ca7-b4b6-202e79b0f6c0" name="pg_catalog" nativeTerm="schema" physicalName="pg_catalog" >
     </schema>
     <schema id="SCH4" populated="true" UUID="710a95dd-8f82-46ac-b35d-6a33071fe3f4" name="public" nativeTerm="schema" physicalName="public" >
+     <table id="TAB5" populated="false" UUID="c425f407-bda4-4fa9-9db3-f548ce2785b5" name="harrastus" objectType="TABLE" physicalName="harrastus" >
+      <remarks></remarks>
+      <folder id="FOLTAB51" populated="false" name="Columns" physicalName="Columns" type="1">
+       <index id="IDX6" populated="true" UUID="ef9092a7-4a56-427a-90ae-7c29bd3f18b6" clustered="false" name="harrastus_pk" physicalName="harrastus_pk" primaryKeyIndex="true" unique="false" >
+       </index>
+      </folder>
+     </table>
+     <table id="TAB7" populated="false" UUID="f2d5fcf9-8379-4509-af1c-197c3a91f9ff" name="henkilo" objectType="TABLE" physicalName="henkilo" >
+      <remarks></remarks>
+      <folder id="FOLTAB71" populated="false" name="Columns" physicalName="Columns" type="1">
+       <index id="IDX8" populated="true" UUID="6fe7ad04-c51b-4259-9403-f78799a9eb7f" clustered="false" name="henkilo_pk" physicalName="henkilo_pk" primaryKeyIndex="true" unique="false" >
+       </index>
+      </folder>
+     </table>
     </schema>
    </catalog>
    <relationships>
@@ -34,65 +57,13 @@
   </database>
  </source-databases>
  <target-database id="ppdb" dbcs-ref="DS0">
-  <table id="TAB6" populated="true" UUID="24599503-0dd3-4264-b7dd-1226d0936894" name="Henkilö" objectType="TABLE" physicalName="henkilo" >
-   <remarks></remarks>
-   <folder id="FOLTAB61" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL7" populated="true" UUID="c8c143d5-ea10-4e0e-a53f-7921c4418a95" autoIncrement="true" autoIncrementSequenceName="henkilo_henkilo_id_seq" defaultValue="" name="HenkilöID" nullable="0" physicalName="henkilo_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
-    </column>
-    <column id="COL8" populated="true" UUID="e4b331ef-43c5-4393-bdfd-a9b742154768" autoIncrement="false" autoIncrementSequenceName="henkilo_etunimi_seq" defaultValue="" name="Etunimi" nullable="0" physicalName="etunimi" precision="20" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
-    </column>
-    <column id="COL9" populated="true" UUID="eff99eb4-dfe0-4d6c-b32b-580d019f73cd" autoIncrement="false" autoIncrementSequenceName="henkilo_sukunimi_seq" defaultValue="" name="Sukunimi" nullable="0" physicalName="sukunimi" precision="30" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
-    </column>
-    </folder>
-    <folder id="FOLTAB63" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
-    </folder>
-    <folder id="FOLTAB62" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
-    </folder>
-    <folder id="FOLTAB64" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX10" populated="true" UUID="05f15131-01fa-4234-98e8-17cec65a2153" clustered="false" name="henkilo_pk" physicalName="henkilo_pk" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC11" populated="true" UUID="4f64bd67-5cc4-4e07-88d5-64691de03164" ascendingOrDescending="UNSPECIFIED" column-ref="COL7" name="HenkilöID" physicalName="henkilo_id" />
-    </index>
-   </folder>
-  </table>
-  <table id="TAB12" populated="true" UUID="508ccb7e-e793-4a82-96dd-13b6a58c82ac" name="Harrastus" objectType="TABLE" physicalName="harrastus" >
-   <remarks></remarks>
-   <folder id="FOLTAB121" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL13" populated="true" UUID="eec81558-acfa-424a-a42f-9d76167c7f56" autoIncrement="true" autoIncrementSequenceName="harrastus_id_seq" defaultValue="" name="ID" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
-    </column>
-    <column id="COL14" populated="true" UUID="1e7b51c3-c166-4d56-a927-f0a3f89a1dc8" autoIncrement="false" autoIncrementSequenceName="harrastus_nimi_seq" defaultValue="" name="Nimi" nullable="0" physicalName="nimi" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
-     <remarks></remarks>
-    </column>
-    <column id="COL15" populated="true" UUID="9f70c01d-4c6d-42e3-92fc-c12184c6341a" autoIncrement="false" autoIncrementSequenceName="henkilo_henkilo_id_seq" defaultValue="" name="HenkilöID" nullable="0" physicalName="henkilo_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
-    </column>
-    </folder>
-    <folder id="FOLTAB123" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
-    </folder>
-    <folder id="FOLTAB122" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
-    </folder>
-    <folder id="FOLTAB124" populated="true" name="Indices" physicalName="Indices" type="4">
-    <index id="IDX16" populated="true" UUID="0e31f6e0-3049-40ee-9e7f-e03c0763a972" clustered="false" name="harrastus_pk" physicalName="harrastus_pk" primaryKeyIndex="true" unique="false" >
-     <index-column id="IDC17" populated="true" UUID="14c42a89-2b83-4e5f-8280-e3384aa27602" ascendingOrDescending="UNSPECIFIED" column-ref="COL13" name="ID" physicalName="id" />
-    </index>
-   </folder>
-  </table>
   <relationships>
-   <relationship id="REL18" populated="true" UUID="fac8a879-a05a-40c5-ba7a-7a442c39e598" deferrability="7" deleteRule="0" fk-table-ref="TAB12" fkCardinality="7" identifying="false" name="henkilo_harrastus_fk" physicalName="henkilo_harrastus_fk" pk-table-ref="TAB6" pkCardinality="2" updateRule="0" >
-    <column-mapping id="CMP19" populated="true" UUID="4e49d3ef-77fd-496c-b8b3-d31ca16cd4ea" fk-column-ref="COL15" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL7" />
-   </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.GenericDDLGenerator" allow-connection="true"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="public"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
-  <table-pane table-ref="TAB6" x="139" y="77" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB12" x="498" y="79" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-link relationship-ref="REL18" pkConnection="0.5070422535211268" fkConnection="0.4788732394366197" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
  </play-pen>
  <critic-manager>
   <critic-grouping platformType="Generic" enabled="true">
