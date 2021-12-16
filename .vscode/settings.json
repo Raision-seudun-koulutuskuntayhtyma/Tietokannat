@@ -1,0 +1,24 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Vuokraustietokanta",
+            "database": "vuokraus",
+            "username": "postgres",
+            "password": "Q2werty"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Skriptitesti",
+            "database": "testi44",
+            "username": "postgres",
+            "password": "Q2werty"
+        }
+    ]
+}
